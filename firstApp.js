@@ -1,18 +1,20 @@
-const answerRandom = {
-	firstArrRand: ["you are beatiful", "you are bad", "you are small"],
-	secondArrRand: ["you are nice", "you are bastard", "you are ciao"],
-	thirdArrRand: ["you are awesome", "you are sick", "you are fuck"],
-};
+const answerRandomStory = [
+	["The Kinght", "The King", "The Zombie"],
+	["with the ax", "with the gun", "with a bite"],
+	["will kill a bear", "will kill a lion", "will kill a person"],
+];
 
-function randomAnswer(obj) {
-	const indexResponse = Math.floor(Math.random() * 3);
+//console.log(answerRandomStory[0][Math.floor(Math.random() * 3)]);
+
+function randomAnswer(arrStory) {
 	let response = [];
 
-	for (const arr in obj) {
-		response.push(obj[arr][indexResponse]);
+	for (let i = 0; i < arrStory.length; i++) {
+		//console.log(arrStory[i]);
+		response.push(arrStory[i][Math.floor(Math.random() * 3)]);
 	}
-
-	return response[Math.floor(Math.random() * 3)]; //[indexResponse];
+	return response.join(" ");
 }
 
-console.log(randomAnswer(answerRandom));
+console.log(randomAnswer(answerRandomStory));
+console.log(randomAnswer(answerRandomStory));
